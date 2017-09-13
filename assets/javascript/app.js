@@ -1,4 +1,8 @@
+// When the web page is first loaded, the trivia game and timer will be hidden.
+
 $(document).ready(function() {
+
+	$(".container").hide();
 
 	// Below, I'm creating variables for the actual timer and the actual time interval for the countdown. The user will have one minute to finish the quiz.
 
@@ -44,9 +48,14 @@ $(document).ready(function() {
 
 	}
 
-	// The timer will start when the user hits the Start button.
+	// The trivia questions will appear and the timer will start when the user hits the Start button.
 
 	$(".startButton").on("click", run);
+
+	$(".startButton").click(function() {
+		$(".container").show();
+		$(".startButton").hide();
+	});
 
 	// The number of seconds remaining will decrease by 1 every second.
 
