@@ -10,6 +10,32 @@ $(document).ready(function() {
 
 	var score = 0;
 
+	// This function will increase the score variable by one when a correct answer is clicked.
+
+	$(".correct").on("click", addScore);
+
+	function addScore() {
+
+		score++;
+
+	}
+
+	// These are a corresponding variable and function for keeping track of incorrect answers.
+
+	var wrongScore = 0;
+
+	$(".incorrect").on("click", addWrongScore);
+
+	function addWrongScore() {
+
+		wrongScore++;
+
+	}
+
+	// This variable will keep track of the number of questions left unanswered, but there needs to be a function to increase the number.
+
+	var blank = 0;
+
 	// The timer will start when the user hits the Start button.
 
 	$(".startButton").on("click", run);
@@ -31,6 +57,7 @@ $(document).ready(function() {
 		if (timeLeft === 0) {
 
 			stop();
+			totalScore();
 
 		}
 	}
@@ -41,4 +68,27 @@ $(document).ready(function() {
 
 	}
 
+	// Once time runs out, the div containing the questions will be replaced by a new div containing the results of the game, including the user's final score.
+
+	function totalScore() {
+
+		$(".container").empty();
+
+		$(".container").html("<h1>All Done!</h1>")
+
+		var correctDiv = $("<div class='answersCorrect'>")
+		correctDiv.html("<h3>Correct Answers: " + score + "</h3>")
+
+		$(".container").append(correctDiv);
+
+		var incorrectDiv = $("<div class='answersIncorrect'>")
+		incorrectDiv.html("<h3>Incorrect Answers: " + wrongScore + "</h3>")
+
+		$(".container").append(incorrectDiv);
+
+		var blankDiv = $("<div class='answersBlank'>")
+		blankDiv.html("<h3>Unanswered: " + blank + "</h3>")
+
+		$(".container").append(blankDiv);
+	}
 })
