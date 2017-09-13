@@ -10,20 +10,26 @@
   </head>
   <body>
 
+  	<!-- Using Jumbotron for the title of the page -->
+
+	<div class="jumbotron">
+	    <h1 class="text-center"><strong>A Trivia Game!</strong></h1>
+	</div>
+
   	<!-- Most of the game content will go into a container, so it can be hidden until the user clicks the Start button. -->
 
   	<div class="container">
 
-    <!-- Using Jumbotron for the title of the page -->
+  		<!-- This button will start the timer. -->
 
-	    <div class="jumbotron">
-	    	<h1 class="text-center"><strong>A Trivia Game!</strong></h1>
-	    </div>
+	    <button type="button" class="btn btn-danger btn-lg">Start!</button>
+
+	    <div class="timer"></div>
 
 	    <!-- Each question will be a form with radio button input in a div. -->
 	    <!-- The correct answer for each question will be assigned a class indicating that. -->
 
-	    <div class="question1">
+	    <div class="question">
 	    	<h3>What does the title of the Mobile Suit Gundam series refer to?</h3>
 	    	<form>
 	    		<input type="radio" name="choice" value="A giant robot" class="correct"> A giant robot<br>
@@ -33,7 +39,7 @@
 	    	</form>
 	    </div>
 
-	    <div class="question2">
+	    <div class="question">
 	    	<h3>Which of these is not a marsupial?</h3>
 	    	<form>
 	    		<input type="radio" name="choice" value="Echidna" class="correct"> Echidna<br>
@@ -43,7 +49,7 @@
 	    	</form>
 	    </div>
 
-	    <div class="question3">
+	    <div class="question">
 	    	<h3>Which of the following is a reddish color?</h3>
 	    	<form>
 	    		<input type="radio" name="choice" value="Indigo"> Indigo<br>
@@ -53,7 +59,7 @@
 	    	</form>
 	    </div>
 
-	    <div class="question4">
+	    <div class="question">
 	    	<h3>What instrument did the mythical figure Orpheus play?</h3>
 	    	<form>
 	    		<input type="radio" name="choice" value="Kazoo"> Kazoo<br>
@@ -63,7 +69,7 @@
 	    	</form>
 	    </div>
 
-	    <div class="question5">
+	    <div class="question">
 	    	<h3>In what year was the video game Final Fantasy 9 released?</h3>
 	    	<form>
 	    		<input type="radio" name="choice" value="1990"> 1990<br>
@@ -72,6 +78,7 @@
 	    		<input type="radio" name="choice" value="1987"> 1987<br>
 	    	</form>
 	    </div>
+	    <br>
 
 	</div>
 
