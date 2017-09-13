@@ -13,6 +13,7 @@ $(document).ready(function() {
 	// This function will increase the score variable by one when a correct answer is clicked.
 
 	$(".correct").on("click", addScore);
+	$(".correct").on("click", blankQuestions);
 
 	function addScore() {
 
@@ -25,6 +26,7 @@ $(document).ready(function() {
 	var wrongScore = 0;
 
 	$(".incorrect").on("click", addWrongScore);
+	$(".incorrect").on("click", blankQuestions);
 
 	function addWrongScore() {
 
@@ -32,9 +34,15 @@ $(document).ready(function() {
 
 	}
 
-	// This variable will keep track of the number of questions left unanswered, but there needs to be a function to increase the number.
+	// This variable will keep track of the number of questions left unanswered. This number will decrease with each question the user answers.
 
-	var blank = 0;
+	var blank = 5;
+
+	function blankQuestions() {
+
+		blank--;
+
+	}
 
 	// The timer will start when the user hits the Start button.
 
